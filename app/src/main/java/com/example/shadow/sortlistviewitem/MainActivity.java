@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         itemAdapter = new SessionItemAdapter(this);
         mListView.setAdapter(itemAdapter);
         refreshView();
-
+        iconArray.recycle();
     }
 
     private void refreshView() {

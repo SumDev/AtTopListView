@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Created by Administrator on 2016/3/4.
+ * Created by shadow on 2016/3/4.
  */
 public class ItemView extends LinearLayout {
 

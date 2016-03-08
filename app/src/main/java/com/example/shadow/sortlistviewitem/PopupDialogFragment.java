@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * Created by Administrator on 2016/3/8.
+ * Created by shadow on 2016/3/8.
  */
 public class PopupDialogFragment extends DialogFragment {
 
