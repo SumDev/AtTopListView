@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -92,8 +93,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refreshView() {
+        //如果不调用sort方法，是不会进行排序的，也就是不会调用compareTo
+        Collections.sort(sessionList);
         itemAdapter.updateData(sessionList);
-        itemAdapter.notifyDataSetChanged();
     }
 
     @Override

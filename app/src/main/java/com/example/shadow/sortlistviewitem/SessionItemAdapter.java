@@ -39,6 +39,8 @@ public class SessionItemAdapter extends ArrayAdapter<Session> {
         itemView.setText(String.valueOf(System.currentTimeMillis() / 1000));
         if (getItem(position).getTop() == 1) {
             itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorTop));
+        } else {
+            itemView.setBackgroundColor(mContext.getResources().getColor(R.color.write_bg));
         }
 
         return convertView;

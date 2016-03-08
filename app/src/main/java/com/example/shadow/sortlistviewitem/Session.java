@@ -1,21 +1,22 @@
 package com.example.shadow.sortlistviewitem;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by Administrator on 2016/3/4.
  */
-public class Session implements Comparable {
+public class Session implements Serializable, Comparable {
 
     /**
      * 是否置顶
      */
-    private int top;
+    public int top;
 
     /**
      * 置顶时间
      **/
-    private long time;
+    public long time;
 
 
     public long getTime() {
