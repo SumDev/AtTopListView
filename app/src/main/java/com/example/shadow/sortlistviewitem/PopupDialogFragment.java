@@ -25,7 +25,7 @@ public class PopupDialogFragment extends DialogFragment {
         TextView cancelTv = (TextView) view.findViewById(R.id.cancel_top_tv);
 
         Bundle bundle = getArguments();
-        int isTop = bundle.getInt(MainActivity.TOPSTATES);
+        int isTop = bundle.getInt(MainActivity.TOP_STATES);
         if (isTop == 1) {
             onTopTv.setVisibility(View.GONE);
             cancelTv.setVisibility(View.VISIBLE);

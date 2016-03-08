@@ -18,6 +18,11 @@ public class Session implements Serializable, Comparable {
      **/
     public long time;
 
+    /**
+     * 头像
+     */
+    public int avatar;
+
 
     public long getTime() {
         return time;
@@ -35,9 +40,17 @@ public class Session implements Serializable, Comparable {
         this.top = top;
     }
 
+    public int getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(int avatar) {
+        this.avatar = avatar;
+    }
+
     @Override
     public int compareTo(Object another) {
-        if (another == null || another instanceof Session == false) {
+        if (another == null || !(another instanceof Session)) {
             return -1;
         }
 

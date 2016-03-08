@@ -1,5 +1,6 @@
 package com.example.shadow.sortlistviewitem;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static int MAX = 8;
 
-    public static String TOPSTATES = "TOP";
+    public static String TOP_STATES = "TOP";
 
     private ListView mListView;
 
@@ -42,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 final Session session = (Session) parent.getItemAtPosition(position);
                 Bundle bundle = new Bundle();
-                bundle.putInt(TOPSTATES, session.getTop());
+                bundle.putInt(TOP_STATES, session.getTop());
                 PopupDialogFragment popupDialog = new PopupDialogFragment();
                 popupDialog.setArguments(bundle);
                 popupDialog.setItemOnClickListener(new PopupDialogFragment.DialogItemOnClickListener() {
                     @Override
                     public void onTop() {
                         session.setTop(1);
+                        session.setTime(System.currentTimeMillis());
                         refreshView();
                     }
 
@@ -83,8 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
         mListView = (ListView) findViewById(R.id.listView);
         sessionList = new ArrayList<>();
+        TypedArray iconArray = getResources().obtainTypedArray(R.array.icon_array);
         for (int i = 0; i < MAX; i++) {
-            sessionList.add(new Session());
+            Session session = new Session();
+            session.setAvatar(iconArray.getResourceId(i,R.mipmap.ic_launcher));
+            sessionList.add(session);
         }
         itemAdapter = new SessionItemAdapter(this);
         mListView.setAdapter(itemAdapter);
@@ -93,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refreshView() {
-        //如果不调用sort方法，是不会进行排序的，也就是不会调用compareTo
+        //如果不调用sort方法，是不会进行排序的，也就不会调用compareTo
         Collections.sort(sessionList);
         itemAdapter.updateData(sessionList);
     }

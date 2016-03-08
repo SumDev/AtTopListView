@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/3/4.
+ * Created by shadow on 2016/3/4.
  */
 public class SessionItemAdapter extends ArrayAdapter<Session> {
 
@@ -36,7 +36,8 @@ public class SessionItemAdapter extends ArrayAdapter<Session> {
             convertView = new ItemView(mContext);
         }
         ItemView itemView = (ItemView) convertView;
-        itemView.setText(String.valueOf(System.currentTimeMillis() / 1000));
+        itemView.setText(String.valueOf(getItem(position).getTop()));
+        itemView.setAvatar(getItem(position).getAvatar());
         if (getItem(position).getTop() == 1) {
             itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorTop));
         } else {
