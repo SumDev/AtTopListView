@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static int MAX = 8;
 
+    private static int ON_TOP = 1;
+
+    private static int CANCEL_TOP = 0;
+
     public static String TOP_STATES = "TOP";
 
     private ListView mListView;
@@ -49,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 popupDialog.setItemOnClickListener(new PopupDialogFragment.DialogItemOnClickListener() {
                     @Override
                     public void onTop() {
-                        session.setTop(1);
+                        session.setTop(ON_TOP);
                         session.setTime(System.currentTimeMillis());
                         refreshView();
                     }
 
                     @Override
                     public void onCancel() {
-                        session.setTop(0);
+                        session.setTop(CANCEL_TOP);
                         refreshView();
                     }
 
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         mListView = (ListView) findViewById(R.id.listView);
         sessionList = new ArrayList<>();
+        //简单实现Item数据
         TypedArray iconArray = getResources().obtainTypedArray(R.array.icon_array);
         for (int i = 0; i < MAX; i++) {
             Session session = new Session();
