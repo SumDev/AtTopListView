@@ -52,6 +52,7 @@ public class PopupDialogFragment extends DialogFragment {
 
 
         getDialog().getWindow().requestFeature(STYLE_NO_TITLE);
+        setStyle(STYLE_NO_FRAME, android.R.style.Theme_Light);
         setCancelable(true);
         getDialog().getWindow().setBackgroundDrawableResource(R.color.write_bg);
         return view;

@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/avatar_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_vertical"
         />
 
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="hello word"
         android:layout_gravity="center_vertical"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:layout_marginLeft="30dp"
         />
 

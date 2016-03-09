@@ -39,9 +39,9 @@ public class SessionItemAdapter extends ArrayAdapter<Session> {
         itemView.setText(String.valueOf(getItem(position).getTop()));
         itemView.setAvatar(getItem(position).getAvatar());
         if (getItem(position).getTop() == 1) {
-            itemView.setBackgroundColor(mContext.getResources().getColor(R.color.colorTop));
+            itemView.setBackgroundResource(R.drawable.bg_top_item_selector);
         } else {
-            itemView.setBackgroundColor(mContext.getResources().getColor(R.color.write_bg));
+            itemView.setBackgroundResource(R.drawable.bg_item_selector);
         }
 
         return convertView;
