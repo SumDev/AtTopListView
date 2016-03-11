@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 popupDialog.setItemOnClickListener(new PopupDialogFragment.DialogItemOnClickListener() {
                     @Override
                     public void onTop() {
+                        //置顶
                         session.setTop(ON_TOP);
                         session.setTime(System.currentTimeMillis());
                         refreshView();
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancel() {
+                        //取消
                         session.setTop(CANCEL_TOP);
                         refreshView();
                     }
