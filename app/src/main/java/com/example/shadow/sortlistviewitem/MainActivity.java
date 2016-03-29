@@ -19,8 +19,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static int MAX = 8;
-
     private static int ON_TOP = 1;
 
     private static int CANCEL_TOP = 0;
@@ -93,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         sessionList = new ArrayList<>();
         //简单实现Item数据
         TypedArray iconArray = getResources().obtainTypedArray(R.array.icon_array);
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < 8; i++) {
             Session session = new Session();
             session.setAvatar(iconArray.getResourceId(i,R.mipmap.ic_launcher));
             sessionList.add(session);
