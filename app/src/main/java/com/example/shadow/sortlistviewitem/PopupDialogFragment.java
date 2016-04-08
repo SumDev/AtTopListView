@@ -26,6 +26,7 @@ public class PopupDialogFragment extends DialogFragment {
 
         Bundle bundle = getArguments();
         int isTop = bundle.getInt(MainActivity.TOP_STATES);
+        //判断是否已经置顶
         if (isTop == 1) {
             onTopTv.setVisibility(View.GONE);
             cancelTv.setVisibility(View.VISIBLE);
